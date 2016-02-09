@@ -16,7 +16,7 @@
     	}
     }
     else{
-        include "./admin_page".strval($action).".php";
+            include "./admin_page".strval($action).".php";
     }
 ?>
 

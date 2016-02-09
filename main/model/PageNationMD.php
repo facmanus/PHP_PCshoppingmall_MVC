@@ -92,7 +92,6 @@
     function  search_MemberPageInfo($search_val,$pageInfo){
         $action=$search_val['action'];
         $limitFirstNum = ($pageInfo['current_page_num'] - 1) * one_page_num;
-        // $query="SELECT * FROM membership WHERE ".strval($search)."='".strval($search_keyword)."' ORDER BY member_id DESC limit {$limitFirstNum},".strval(one_page_num);
         $query="SELECT * FROM membership WHERE ".strval($search_val['search'])."='".strval($search_val['search_keyword'])."'";
         $result=SQL_CON($query);
         $cnt=0;

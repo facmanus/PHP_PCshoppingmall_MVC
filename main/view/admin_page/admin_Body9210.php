@@ -1,8 +1,6 @@
 
-<h1>상품 입력</h1>
-
 <form name="memberJoin" action="../controller/MainCTL.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="action" value="922">
+    <input type="hidden" name="action" value="9211">
     카테고리 : <select name="pcategory"  placeholder="상품카테고리">
         <option value="C1">게이밍모니터(C1)</option>
         <option value="C2">WQHD모니터(C2)</option>

@@ -3,7 +3,6 @@
 ?>
 
 <html>
-<h5>▶ 회원목록 ◀</h5>
     <form action="../controller/MainCTL.php?action=916" method="post">
         <table width=500 border=0 cellpadding=2 cellspacing=1 bgcolor=#eeeee  style="font-size: 11" class="table">
 

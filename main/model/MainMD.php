@@ -1,4 +1,5 @@
 <?php
+
     //DB에 접속하고 쿼리를 실행한다.
     //현재 코드의 흐름상으로는 쿼리를 실행 시키기 위한 DB연결 이기 때문에 하나의 함수로 쿼리 실행까지 묶었다.
     function SQL_CON($query){
@@ -7,7 +8,7 @@
        mysql_query("SET NAME utf8 ");
        mysql_select_db("beomshop", $connect);
        $rsc=mysql_query($query,$connect);
-       mysql_close();
+       
         return $rsc;
     }
 

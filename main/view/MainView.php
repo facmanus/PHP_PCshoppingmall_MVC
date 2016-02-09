@@ -70,8 +70,12 @@ session_start();
                         //관리자 모드일 경우
                         else{
                             echo" <td colspan=2 width='800' height='500'>";
-                            include "./admin_page/admin_Body".strval($action).".php";
-                            echo"</td>";
+                                    if($action==9213){
+                                        include "./admin_page/admin_Body9210.php";
+                                    }else{
+                                        include "./admin_page/admin_Body".strval($action).".php";
+                                    }
+                                echo"</td>";
                         }
                     ?>
             </tr>
