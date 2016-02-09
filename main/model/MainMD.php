@@ -67,26 +67,21 @@
     function deleteing($del_member_id){
             $query="DELETE FROM membership WHERE member_id = ".strval($del_member_id);
             $result =SQL_CON($query);
-            // mysql_close();
     }
 
     //회원정보 업데이트 함수
     function updateing($member){
         $query="update membership set passwd=".strval($member[2]).",gender='".strval($member[4])."',phone=".intval($member[5]).",address='".strval($member[6])."',movie='".strval($member[7])."',book='".strval($member[8])."',shop='".strval($member[9])."',sport='".strval($member[10])."',intro='".strval($member[11])."' where member_id=".$member[12];
         $result =SQL_CON($query);
-        // mysql_close();
     }
 
-    //전체 회원을 출력하기위한 함수
+    //아이디에 해당하는 회원검색 함수
     function selecting($select_member_id){
-        $_SESSION['search'] = isset($_REQUEST['search'])?$_REQUEST['search']:null;
         $query="SELECT * FROM membership WHERE member_id='".strval($select_member_id)."'";
         $result=SQL_CON($query);
         $user=mysql_fetch_array($result);
-        // mysql_close();
         return $user;
-        
-
     }
 
+    
 ?>

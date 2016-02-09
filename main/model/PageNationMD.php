@@ -9,7 +9,12 @@
     	//pageinfo 연관배열
 
     	//전체 레코드 수 = 전체 레코드 수 구하는 함수;
-    	$pageinfo['all_record_num']=$all_record_num = getMemberCount();
+        if(!isset($_SESSION['search_keyword'])){
+    	   $pageinfo['all_record_num']=$all_record_num = getMemberCount();
+        }
+        elseif(isset($_SESSION['search_keyword'])){
+            $pageinfo['all_record_num']=$all_record_num = search_getMemberCount($_SESSION['search'],$_SESSION['search_keyword']);
+        }
     	//전체 페이지 수 = 올림(전체 레코드수 / 한 페이지당 페이지 갯수)
     	$pageinfo['all_page_num']=$all_page_num = ceil($all_record_num/one_page_num);
     	//전체 블럭 수  = 올림(전체 페이지 수 / 블럭당 표시 페이지네이션 갯수 )
@@ -45,17 +50,13 @@
     function MemberPageInfo($pageInfo){
 
 	    $limitFirstNum = ($pageInfo['current_page_num'] - 1) * one_page_num;
-        if(isset($_SESSION['search'])){
-	       $sql = "SELECT * FROM membership WHERE ID={$_SESSION['search']} ORDER BY member_id DESC limit {$limitFirstNum},".strval(one_page_num);
-	    }
-        else{
+
             $sql = "SELECT * FROM membership ORDER BY member_id DESC limit {$limitFirstNum},".strval(one_page_num) ;
-        }
+
         $result = SQL_CON($sql);
 
 
 	    $cnt = 0;
-        echo($result);
 	    while( $row = mysql_fetch_array($result)){
 	        $memberList[$cnt]['member_id'] = $row['member_id'];
             $memberList[$cnt]['id'] = $row['id'];
@@ -77,6 +78,7 @@
 
 	    return $memberList;
 	}
+
     // member데이블 레코드 갯수 확인 
 	function getMemberCount(){ 
         $sql = " SELECT count(*) FROM membership; ";
@@ -86,13 +88,50 @@
 	    return $count;
 	}
 
+
+    function  search_MemberPageInfo($search_val,$pageInfo){
+        $action=$search_val['action'];
+        $limitFirstNum = ($pageInfo['current_page_num'] - 1) * one_page_num;
+        // $query="SELECT * FROM membership WHERE ".strval($search)."='".strval($search_keyword)."' ORDER BY member_id DESC limit {$limitFirstNum},".strval(one_page_num);
+        $query="SELECT * FROM membership WHERE ".strval($search_val['search'])."='".strval($search_val['search_keyword'])."'";
+        $result=SQL_CON($query);
+        $cnt=0;
+        while ($row=mysql_fetch_array($result)) {
+            $memberList[$cnt]['member_id'] = $row['member_id'];
+            $memberList[$cnt]['id'] = $row['id'];
+            $memberList[$cnt]['name'] = $row['name'];
+            $memberList[$cnt]['passwd'] = $row['passwd'];
+            $memberList[$cnt]['level'] = $row['level'];
+            $memberList[$cnt]['gender'] = $row['gender'];
+            $memberList[$cnt]['phone'] = $row['phone'];
+            $memberList[$cnt]['address'] = $row['address'];
+            $memberList[$cnt]['movie'] = $row['movie'];
+            $memberList[$cnt]['book'] = $row['book'];
+            $memberList[$cnt]['shop'] = $row['shop'];
+            $memberList[$cnt]['sport'] = $row['sport'];
+            $memberList[$cnt]['intro'] = $row['intro'];
+
+            $cnt++;
+        }
+        return $memberList;
+    }
+
+    function search_getMemberCount($search,$search_keyword){
+        $query="SELECT count(*) FROM membership WHERE ".strval($search)."='".strval($search_keyword)."'";
+        $result= SQL_CON($query);
+        $count = mysql_result($result,0,0);
+        return $count;
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     // product 해당 카테고리 전체 레코드 수를 알기위한 함수
     function getProductCount($pcategory){ 
-
-        $sql = " SELECT count(*) FROM product WHERE pcategory LIKE '".strval($pcategory)."%'";
-        $result = SQL_CON($sql);
+        $query = " SELECT count(*) FROM product WHERE pcategory LIKE '".strval($pcategory)."%'";
+        $result = SQL_CON($query);
         $count = mysql_result($result, 0, 0);
-
         return $count;
     }
 
@@ -118,6 +157,7 @@
         $pageInfo['countpage_inblock'] = ($current_page_block_num != $all_block_num)?$CPPB:$last_block_page_num;
         return $pageInfo;
     }
+
 
 
 

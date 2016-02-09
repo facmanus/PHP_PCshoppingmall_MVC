@@ -48,8 +48,7 @@
         <tr ><td colspan='14'>
    <?php include "../view/common/pageNavigation.php"; ?>
     </td><td align="center"><input type="submit" value="삭제"  class="btn btn-danger"></td></tr>
-
-    
          </table>    
     </form>
+<?php include "../view/common/pageSearch.php"; ?>
 </html>

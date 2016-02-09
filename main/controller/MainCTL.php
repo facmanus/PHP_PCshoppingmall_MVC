@@ -132,17 +132,15 @@
             $action=9100;
         header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
     }
-    //찾기--디버깅 하다가 ...오류로 인해 제거 
-    elseif($action==917){
-            $search = isset($_REQUEST['search'])?$_REQUEST['search']:null;
-            
-    }
+
+
 
     //관리자 모드를 눌렸을 시에 관리자 모드로 진입한다.
     elseif(intval($action/1000)==9){
         //로그인한 회원이 레벨이 99이고 id가 admin이면 관리자 모드로 진입할 수 있도록 한다.
         if($_SESSION['login_seccess_id']=='admin'&&$_SESSION['login_seccess_level']==99){
             include ("./adminCTL.php");
+
         }
         else{
             $_SESSION['msg'] = '관리자가 아니라서 관리자모드에 접근할 수 없습니다.';

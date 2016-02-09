@@ -1,7 +1,7 @@
 <center>
 <?php 
 $_SESSION['msg']=isset($_SESSION['msg'])?$_SESSION['msg']:null;
-$_SESSION['login_seccess_id']=isset($_SESSION['login_seccess_id'])?$_SESSION['login_seccess_id']:0;
+
   //비로그인 상태라면
   if(!isset($_SESSION['login_seccess_id'])){ 
     echo($_SESSION['msg']);

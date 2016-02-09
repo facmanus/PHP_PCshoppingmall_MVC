@@ -3,14 +3,26 @@
 	include_once("../model/ProductMD.php");
 	//천자리를 제외한 백자리수를 가지고 액션 처리.
 	$short_num = intval($action%9000);
+	$_SESSION['search'] = isset($_REQUEST['search'])?$_REQUEST['search']:null;
+	$_SESSION['search_keyword'] = isset($_REQUEST['search_keyword'])?$_REQUEST['search_keyword']:null;
 
 	switch ($short_num) {
 		case 0:
 
 //회원관리
 		case 100:
-					$_SESSION['PageInfo'] = getPageInfo($pageNum);
-        			$_SESSION['memberList'] = MemberPageInfo($pageNum);
+					if(isset($_SESSION['search_keyword'])){
+						$search_val['search'] = $_SESSION['search'];
+		            	$search_val['search_keyword'] = $_SESSION['search_keyword'];
+		            	$search_val['action'] = $action;
+		            	$_SESSION['PageInfo'] = getPageInfo($pageNum);
+		            	$_SESSION['memberList'] = search_MemberPageInfo($search_val,$pageNum);
+
+		            	// header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
+					}else{
+						$_SESSION['PageInfo'] = getPageInfo($pageNum);
+        				$_SESSION['memberList'] = MemberPageInfo($pageNum);
+					}
 			break;
 
 // 상품관리
