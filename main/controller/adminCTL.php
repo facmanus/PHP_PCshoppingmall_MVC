@@ -42,7 +42,7 @@
 			 // 이미지 저장 디렉터리
             $productImgSavePath = "../../img/product/";
             $thumbnailImgSavePath = "../../img/product_s/";
-            $thumbnailImgHeight = 150; // 썸네일 이미지 높이를 150px로 설정
+            $thumbnailImgHeight = 300; // 썸네일 이미지 높이를 150px로 설정
             $fileMaxSize = 2000000; // 파일 최대 크기 2Mbyte 설정
 
 
@@ -129,14 +129,14 @@
         			$update_product_num=isset($_REQUEST['up_product_num'])?$_REQUEST['up_product_num']:0;
         			$product_info=product_up_selecting($update_product_num);
 
-			        $_SESSION['update_member_id']=$product_info['pnum'];
-			        $_SESSION['update_id']=$product_info['pcategory'];
-			        $_SESSION['update_name']=$product_info['pcode'];
-			        $_SESSION['update_passwd']=$product_info['pname'];
-			        $_SESSION['update_gender']=$product_info['pprice'];
-			        $_SESSION['update_phone']=$product_info['pstock'];
-			        $_SESSION['update_address']=$product_info['pfimage'];
-			        $_SESSION['update_movie']=$product_info['psimage'];
+			        $_SESSION['update_pnum']=$product_info['pnum'];
+			        $_SESSION['update_pcategory']=$product_info['pcategory'];
+			        $_SESSION['update_pcode']=$product_info['pcode'];
+			        $_SESSION['update_pname']=$product_info['pname'];
+			        $_SESSION['update_pprice']=$product_info['pprice'];
+			        $_SESSION['update_pstock']=$product_info['pstock'];
+			        $_SESSION['update_pfimage']=$product_info['pfimage'];
+			        $_SESSION['update_psimage']=$product_info['psimage'];
         	break;
      //실제 수정 버튼 액션
         case 214:
@@ -161,6 +161,7 @@
 		            
 		            header("location:../controller/MainCTL.php?action=$action&pageNum=1");
         	break;
+
 
 // 구매관리
 		case 300:

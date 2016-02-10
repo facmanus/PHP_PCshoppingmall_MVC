@@ -11,8 +11,8 @@
 		<td align=center>카테고리</td>
 		<td align=center>코드</td>
 		<td align=center>상품명</td>
-		<td align=center>재고량</td>
 		<td align=center>가격</td>
+		<td align=center>재고량</td>
 		<td align=center>이미지명</td>
 		<td align=center>썸네일명</td>
 		<td align=center>UPD</td>
@@ -36,17 +36,24 @@
 	   	}
     
 ?>
-        <tr ><td colspan='9'>
+        <tr ><td colspan='8'>
    <?php include "../view/common/pageNavigation.php"; ?>
     </td>
+
     <td>
+<?php
+	}
+?>
+    
     <a href='../controller/MainCTL.php?action=9210' class="btn btn-danger">상품정보입력</a>
+<?php
+	if($productlist!=false){    
+?>
     </td>
         </td><td align="center"><input type="submit" value="삭제"  class="btn btn-danger"></td>
+
 </table>
 <?php
 	}
 ?>
-
-
 

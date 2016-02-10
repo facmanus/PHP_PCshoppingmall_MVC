@@ -13,10 +13,10 @@
 	//각 카테고리 마다 한페이지당 보여줄 게시물 수, 페이지네이션 한 블럭당 보여줄 페이지네이션 넘버 
 	$product_limit=array(
 					array(15,5),
-					array(14,6),
-					array(13,5),
-					array(12,6),
-					array(11,5)
+					array(10,5),
+					array(15,5),
+					array(20,5),
+					array(5,5)
 				);
 
 	//액션값에 의한 카테고리, limit 배열 처리

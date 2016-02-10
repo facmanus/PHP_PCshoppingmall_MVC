@@ -20,15 +20,21 @@
    		return mysql_insert_id();
 	}
 
+	
+	function deteil_seleting($pnum){
+		$query="SELECT * FROM product WHERE pnum = '".strval($pnum)."'";
+		$result =SQL_CON($query);
+		$product_info=mysql_fetch_array($result);
+        return $product_info;
+	}
 	//product 삭제
-
 	function produect_deleteing($del_product_num){
 		$query="DELETE FROM product WHERE pnum = ".strval($del_product_num);
         $result =SQL_CON($query);
 	}
 	//product 수정을 위한 조회
 	function product_up_selecting($up_product_num){
-		$query="SELECT FROM product WHERE pnum = ".strval($up_product_num);
+		$query="SELECT * FROM product WHERE pnum = ".strval($up_product_num);
 		$result =SQL_CON($query);
 	}
 	//product 수정을 위한 함수

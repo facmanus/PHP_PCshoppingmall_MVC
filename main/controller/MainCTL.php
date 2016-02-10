@@ -2,7 +2,7 @@
     //함수를 사용하기 위한 참조 
     include_once ("../model/MainMD.php");
     include_once ("../model/PageNationMD.php");
-    
+    include_once("../model/ProductMD.php");
     session_start();
     //VIEW에서 날라온 세션, 리퀘스트의 유무를 확인 후 변수에 대입.
     $action = isset($_REQUEST['action'])? $_REQUEST['action'] : 110;
@@ -131,6 +131,12 @@
         else
             $action=9100;
         header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
+    }
+
+    elseif($action==920){
+        $pnum=($_REQUEST['pnum'])?$_REQUEST['pnum']:null;
+        $product_info=deteil_seleting($pnum);
+        $_SESSION['product_info']=$product_info;
     }
 
 
