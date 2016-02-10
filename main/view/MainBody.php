@@ -14,6 +14,7 @@
         else{
         	include "./body/BodyPage".strval($action).".php";
     	}
+
     }
     else{
             include "./admin_page".strval($action).".php";

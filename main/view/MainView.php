@@ -24,6 +24,8 @@ session_start();
   <style type="text/css">
             %import url(/css/aLinkNoUnderLine.css);
         </style>
+        <!-- 앙귤라js추가 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
     <body>
     <!-- 부트스트랩 상단 메뉴 시작 -->
@@ -53,6 +55,18 @@ session_start();
                                 echo("<td colspan=2 width='800' height='500'>");
                                 echo"<h2 align='center'>죄송합니다.<br> 레벨5 이상만 접속가능합니다. </h2>";
                                 echo("</td>");
+                            }
+                            elseif(intval($action/100)==6){
+                                if(isset($_SESSION['login_seccess_id'])){
+                                    echo("<td colspan=2 width='800' height='500'>");
+                                        include("./body/BodyPage".strval($action).".php");
+                                    echo("</td>");
+                                }
+                                else{
+                                    echo("<td colspan=2 width='800' height='500'>");
+                                    echo"<h2 align='center'>죄송합니다.<br> 로그인사용자만 사용가능합니다. </h2>";
+                                    echo("</td>");
+                                }
                             }
                             elseif(intval($action/100)==9){
                                 echo("<td colspan=2 width='800' height='500'>");

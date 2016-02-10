@@ -8,6 +8,7 @@
 
 	$noImgFileName = "NOIMG_S.JPG"; // 이미지가 존재하지 않을 때 표시할 이미지 파일명
 
+
 	if($productlist==false){
 		echo"상품이 없습니다.";
 	}
@@ -41,7 +42,7 @@
 			      echo($product['pprice']); echo "원<br/>";
 			    echo "</td>";
 			    $cnt++;
-			    if($cnt==5){
+			    if($cnt==3){
 			    	echo"<tr></tr>";
 			    	$cnt=0;
 			    }

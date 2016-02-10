@@ -9,6 +9,7 @@
     $_SESSION['pageNum']=$pageNum = isset($_REQUEST['pageNum'])?$_REQUEST['pageNum']:1;
     $_SESSION['msg'] = isset($_REQUEST['msg'])?$_REQUEST['msg'] :"";
     $_SESSION['search'] = isset($_REQUEST['search'])?$_REQUEST['search']:null;
+    $_SESSION['login_seccess_id']= isset($_SESSION['login_seccess_id'])?$_SESSION['login_seccess_id']:0;
     $_SESSION['login_seccess_level'] = isset($_SESSION['login_seccess_level'])?$_SESSION['login_seccess_level']:0;
     $_SESSION['productlist']=isset($_SESSION['productlist'])?$_SESSION['productlist']:null;
 
@@ -17,6 +18,11 @@
     //550의 이하일 시에 물건을 출력한다는 의미.
     if($action<=550){
         include("./productCTL.php");
+    }
+
+    elseif(intval($action/100)==6){
+        //커뮤니티 게시판
+        include("./comunityCTL.php");
     }
 
     //900번대의 action은 회원가입, 수정, 삭제 , 로그인, 로그아웃 등 회원 정보와 관련 액션.
