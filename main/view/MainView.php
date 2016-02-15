@@ -5,7 +5,7 @@ session_start();
     $login_id = isset($_REQUEST['login_id'])? $_REQUEST['login_id'] : false;
     //현재 로그인 상태라면 login_id_level을 세션에 담는다.
     $login_id_level = isset($_REQUEST['login_id_level'])? $_REQUEST['login_id_level'] : null;
-    // $_SESSION['msg']=isset($_SESSION['msg'])?$_SESSION['msg']:null;
+    $_SESSION['msg']=isset($_SESSION['msg'])?$_SESSION['msg']:null;
     $productlist=$_SESSION['productlist']=isset($_SESSION['productlist'])?$_SESSION['productlist']:null;
     $PageInfo = isset($_SESSION['PageInfo'])?$_SESSION['PageInfo']:null;
     $_SESSION['pageNum']=$pageNum = isset($_REQUEST['pageNum'])?$_REQUEST['pageNum']:1;

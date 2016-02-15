@@ -14,11 +14,11 @@
 
     //회원가입 함수
     function joining($member){
-        $query .="insert into membership values (' ',";
+        $query="insert into membership values (' ',";
         for($j=0;$j<=10;$j++){
                 $query.="'$member[$j]',";
         }
-        $query.="'$member[11]'";
+        $query.="'$member[11]','$member[13]'";
         $query.=")";
 
 

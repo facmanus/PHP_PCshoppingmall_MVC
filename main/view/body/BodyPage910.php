@@ -29,6 +29,7 @@
     $shop=$_SESSION['update_shop'];
     $sport=$_SESSION['update_sport'];
     $intro=$_SESSION['update_intro'];
+    $nick=$_SESSION['update_nick'];
 
   }
   if($action==914){
@@ -49,6 +50,10 @@
     <tr>
       <td align="right" > * 이름 :</td>
       <td><input type="text" size="15" maxlength="12" name="name" placeholder="이름을 입력해주세요." <?php if($action==914) echo("value=".$name."(수정불가) disabled");?>></td>
+    </tr>
+    <tr>
+      <td align="right" > * 닉네임 :</td>
+      <td><input type="text" size="15" maxlength="12" name="nick" placeholder="닉네임을 입력해주세요." <?php if($action==914) echo("value=".$nick."(수정불가) disabled");?>></td>
     </tr>
     <tr>
            <td align="right"> * 비밀번호 :</td>

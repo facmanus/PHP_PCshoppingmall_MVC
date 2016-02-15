@@ -95,4 +95,12 @@
 		return $productlist;
 	}
 
+	function product_img_delete($imgname,$img_Sname){
+		$productImgSavePath = "../../img/product/";
+        $thumbnailImgSavePath = "../../img/product_s/";
+
+        unlink($productImgSavePath.$imgname);
+        unlink($thumbnailImgSavePath.$img_Sname);
+	}
+
 ?>

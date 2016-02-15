@@ -50,7 +50,10 @@
 	if($productlist!=false){    
 ?>
     </td>
-        </td><td align="center"><input type="submit" value="삭제"  class="btn btn-danger"></td>
+        </td><td align="center"><input type="submit" value="삭제"  class="btn btn-danger">
+        						<input type="hidden" name="product_img[]" value="<?=$product['pfimage']?>">
+        						<input type="hidden" name="product_imgS[]" value="<?=$product['psimage']?>">
+			</td>
 
 </table>
 <?php

@@ -5,15 +5,20 @@
     //블럭당 표시 페이지네이션 갯수 
     define("one_pagenation_num",5);
     
-    function getPageInfo($pageNum){
+    function getPageInfo($pageNum,$action){
     	//pageinfo 연관배열
 
     	//전체 레코드 수 = 전체 레코드 수 구하는 함수;
-        if(!isset($_SESSION['search_keyword'])){
-    	   $pageinfo['all_record_num']=$all_record_num = getMemberCount();
+        if($action==9100){
+            if(!isset($_SESSION['search_keyword'])){
+        	   $pageinfo['all_record_num']=$all_record_num = getMemberCount();
+            }
+            elseif(isset($_SESSION['search_keyword'])){
+                $pageinfo['all_record_num']=$all_record_num = search_getMemberCount($_SESSION['search'],$_SESSION['search_keyword']);
+            }
         }
-        elseif(isset($_SESSION['search_keyword'])){
-            $pageinfo['all_record_num']=$all_record_num = search_getMemberCount($_SESSION['search'],$_SESSION['search_keyword']);
+        elseif($action==600){
+            $pageinfo['all_record_num']=$all_record_num = getComunityCount();
         }
     	//전체 페이지 수 = 올림(전체 레코드수 / 한 페이지당 페이지 갯수)
     	$pageinfo['all_page_num']=$all_page_num = ceil($all_record_num/one_page_num);
@@ -40,6 +45,8 @@
     	$pageinfo['current_page_num'] = ($pageNum<=$all_page_num)?$pageNum:$pageNum-1;
     	//현재 페이지네이션 블럭의 페이지 넘버 갯수 = 현재 페이지가 포함된 블럭넘버가 전체 페이지 갯수가 아니면 마지막 블럭에 포함된 페이지 수
     	$pageinfo['countpage_inblock'] = ($current_page_block_num!=$all_block_num)?one_pagenation_num:$last_block_page_num;
+        //
+
 
     	return $pageinfo;
     }

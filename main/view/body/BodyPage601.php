@@ -9,11 +9,9 @@
 			<td>내용</td><td><textarea name="content" rows="5" cols="60"></textarea></td>
 		</tr>
 		<tr>
-			<td>첨부1</td><td><input type="file" name="file1"></td>
+			<td>첨부1</td><td><input type="file" name="file[]" multiple></td>
 		</tr>
-		<tr>
-			<td>첨부2</td><td><input type="file" name="file2"></td>
-		</tr>
+		
 	    <tr>
 	    	<td><input type="reset" value="취소"></td><td><input type="submit" value="저장"></td>
 	    </tr>
@@ -21,5 +19,6 @@
 </table>
 <?
 	// 커뮤니티 글쓰기
+
 	
 ?>

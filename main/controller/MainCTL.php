@@ -9,8 +9,9 @@
     $_SESSION['pageNum']=$pageNum = isset($_REQUEST['pageNum'])?$_REQUEST['pageNum']:1;
     $_SESSION['msg'] = isset($_REQUEST['msg'])?$_REQUEST['msg'] :"";
     $_SESSION['search'] = isset($_REQUEST['search'])?$_REQUEST['search']:null;
-    $_SESSION['login_seccess_id']= isset($_SESSION['login_seccess_id'])?$_SESSION['login_seccess_id']:0;
-    $_SESSION['login_seccess_level'] = isset($_SESSION['login_seccess_level'])?$_SESSION['login_seccess_level']:0;
+    $_SESSION['login_seccess_member_id'] = isset($_SESSION['login_seccess_member_id'])?$_SESSION['login_seccess_member_id']:false;
+    $_SESSION['login_seccess_id']= isset($_SESSION['login_seccess_id'])?$_SESSION['login_seccess_id']:false;
+    $_SESSION['login_seccess_level'] = isset($_SESSION['login_seccess_level'])?$_SESSION['login_seccess_level']:false;
     $_SESSION['productlist']=isset($_SESSION['productlist'])?$_SESSION['productlist']:null;
 
     //action에 다른 처리 방식
@@ -44,6 +45,7 @@
             $member[10] = isset($_REQUEST['sport'])? 'O' : 'X';
             $member[11] = isset($_REQUEST['intro'])? $_REQUEST['intro'] : 'null';
             $member[12] = isset($_REQUEST['member_id'])? $_REQUEST['member_id'] : false;
+            $member[13] = isset($_REQUEST['nick'])? $_REQUEST['nick'] : false;
         //회원 가입 코드
         if($action==911){
             $result=joining($member);
@@ -124,6 +126,7 @@
         $_SESSION['update_shop']=$user_info['shop'];
         $_SESSION['update_sport']=$user_info['sport'];
         $_SESSION['update_intro']=$user_info['intro'];
+        $_SESSION['update_nick']=$user_info['nick'];
     }
 
     //삭제
@@ -159,7 +162,9 @@
         }
     }
         //유저 상태창에 메세지를 띄운다.
+    if(!empty($_SESSION['login_seccess_id'])){
         $_SESSION['msg'] = isset($_SESSION['login_seccess_id'])?"<kbd>".$_SESSION['login_seccess_id']."</kbd>님 환영합니다. 당신의 레벨은 <kbd>".$_SESSION['login_seccess_level']."</kbd>입니다.     " : $_SESSION['msg'] ;
+    }
         header("location:../view/MainView.php?action=$action&pageNum=$pageNum");
     
 

@@ -16,19 +16,19 @@
 						$search_val['search'] = $_SESSION['search'];
 		            	$search_val['search_keyword'] = $_SESSION['search_keyword'];
 		            	$search_val['action'] = $action;
-		            	$_SESSION['PageInfo'] = getPageInfo($pageNum);
+		            	$_SESSION['PageInfo'] = getPageInfo($pageNum,$action);
 		            	$_SESSION['memberList'] = search_MemberPageInfo($search_val,$pageNum);
 
 		            	// header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
 					}else{
-						$_SESSION['PageInfo'] = getPageInfo($pageNum);
+						$_SESSION['PageInfo'] = getPageInfo($pageNum,$action);
         				$_SESSION['memberList'] = MemberPageInfo($pageNum);
 					}
 			break;
 
 // 상품관리
 		case 200:
-					$all_product_limit=array(10,5);
+					$all_product_limit=array(3,5);
 					$all_record_num = getAllProductCount();
 					$_SESSION['PageInfo']= productPageInfo($pageNum,$all_record_num,$all_product_limit[0],$all_product_limit[1]);
 					$_SESSION['productlist']=all_product_selecting($_SESSION['PageInfo']);
@@ -118,10 +118,14 @@
 	//상품 삭제 버튼 액션
 		case 212:
 					$del_product_num=($_REQUEST['product_num'])?$_REQUEST['product_num']:null;
+					$del_product_img=($_REQUEST['product_img'])?$_REQUEST['product_img']:null;
+					$del_product_imgS=($_REQUEST['product_imgS'])?$_REQUEST['product_imgS']:null;
 			        for($i=0;$i<count($del_product_num);$i++){
 			            produect_deleteing($del_product_num[$i]);
+			            product_img_delete($del_product_img[$i],$del_product_imgS[$i]);
 			        }
 			            $action=9200;
+
 			        header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
         	break;
      //상품 수정 버튼 액션

@@ -11,3 +11,12 @@
 			echo"</td></tr>";
 	?>
 </table>
+<?php
+ 	if(($_SESSION['login_seccess_member_id']==$_SESSION['detail_content'][0]['mnum'])||($_SESSION['login_seccess_level']==99)){
+		echo"<a>수정</a>";
+		
+		echo"<a href='../controller/MainCTL.php?action=611&fnum=".strval($content[0]['fnum'])."'>삭제</a>";
+	}
+	echo"<a>답글</a>";
+
+?>

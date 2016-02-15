@@ -45,34 +45,55 @@
 	    return $comunnity;
 	}
 
+	function getComunityCount(){ 
+        $sql = " SELECT count(*) FROM freeboard; ";
+	    $result = SQL_CON($sql);
+	    $count = mysql_result($result, 0, 0);
+
+	    return $count;
+	}
+
+	function hitUp($fnum){
+		$query = "UPDATE freeboard SET hitcount = hitcount + 1 WHERE fnum =".strval($fnum);
+		SQL_CON($query);
+	}
+
 	function insertComunity($data){
 	    $query = " INSERT INTO freeboard ";
 	    $query.=" VALUES('','";
-	    $query.=strval($data['login_write_member_id'])."','".strval($data['subject'])."','".strval($data['content'])."','".strval(date("Y-m-d H:i:s"))."','','1')";
-		
-	    // $result=
+	    $query.=strval($data['login_write_member_id'])."','".strval($data['subject'])."','".strval($data['content'])."','".strval(date("Y-m-d H:i:s"))."','','1','')";
 	    SQL_CON($query);
 	    // $autoFnum = mysql_insert_id();
+	    // $query = "UPDATE freeboard SET group=LAST_INSERT_ID()  WHERE fnum=LAST_INSERT_ID()";
+	    // // $query = "UPDATE freeboard SET group='".strval($autoFnum)."'' WHERE fnum='".strval($autoFnum)."'";
+	    // SQL_CON($query);
 
-	    // $retArr['result'] = $result;
-	    // $retArr['autoFnum'] = $autoFnum;
+	}
 
-	    // return $retArr;
+	function deleteComunity($fnum){
+		deleteReply($fnum);
+		deleteAttach($fnum);
+		$query = "DELETE FROM freeboard WHERE ";
+		$query.= "fnum=".strval($fnum);
+		SQL_CON($query);
+	}
+
+	function deleteReply($fnum){
+		$query = "DELETE FROM free_reply WHERE ";
+		$query.= "ptnum=".strval($fnum);
+		SQL_CON($query);		
+	}
+
+	function deleteAttach($fnum){
+		$query = "DELETE FROM free_attach WHERE ";
+		$query .= "ptnum=".strval($fnum);
 	}
 
 	function insertComment($fnum,$mnum,$content){
 	    $query = " INSERT INTO free_reply ";
 	    $query.=" VALUES('','";
 	    $query.=strval($fnum)."','".strval($mnum)."','".strval($content)."','".strval(date("Y-m-d H:i:s"))."')";
-		
-	    // $result=
 	    SQL_CON($query);
-	    // $autoFnum = mysql_insert_id();
-
-	    // $retArr['result'] = $result;
-	    // $retArr['autoFnum'] = $autoFnum;
-
-	    // return $retArr;	
 	}
 
 ?>
