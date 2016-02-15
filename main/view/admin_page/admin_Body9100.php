@@ -1,5 +1,7 @@
 <?php
     $memberList = isset($_SESSION['memberList'])?         $_SESSION['memberList']     :   null;
+    $pageInfo=isset($_SESSION['PageInfo'])?$_SESSION['PageInfo']:false;
+    echo"총 회원이 ".$pageInfo['all_record_num']."명이 있습니다.";
 ?>
 
 <html>

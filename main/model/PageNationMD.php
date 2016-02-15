@@ -5,21 +5,11 @@
     //블럭당 표시 페이지네이션 갯수 
     define("one_pagenation_num",5);
     
-    function getPageInfo($pageNum,$action){
+    function getPageInfo($pageNum,$all_record_num){
     	//pageinfo 연관배열
 
     	//전체 레코드 수 = 전체 레코드 수 구하는 함수;
-        if($action==9100){
-            if(!isset($_SESSION['search_keyword'])){
-        	   $pageinfo['all_record_num']=$all_record_num = getMemberCount();
-            }
-            elseif(isset($_SESSION['search_keyword'])){
-                $pageinfo['all_record_num']=$all_record_num = search_getMemberCount($_SESSION['search'],$_SESSION['search_keyword']);
-            }
-        }
-        elseif($action==600){
-            $pageinfo['all_record_num']=$all_record_num = getComunityCount();
-        }
+        $pageinfo['all_record_num']=$all_record_num;
     	//전체 페이지 수 = 올림(전체 레코드수 / 한 페이지당 페이지 갯수)
     	$pageinfo['all_page_num']=$all_page_num = ceil($all_record_num/one_page_num);
     	//전체 블럭 수  = 올림(전체 페이지 수 / 블럭당 표시 페이지네이션 갯수 )

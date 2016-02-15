@@ -53,7 +53,7 @@
     </tr>
     <tr>
       <td align="right" > * 닉네임 :</td>
-      <td><input type="text" size="15" maxlength="12" name="nick" placeholder="닉네임을 입력해주세요." <?php if($action==914) echo("value=".$nick."(수정불가) disabled");?>></td>
+      <td><input type="text" size="15" maxlength="12" name="nick" placeholder="닉네임을 입력해주세요." <?php if($action==914) echo("value=".$nick);?>></td>
     </tr>
     <tr>
            <td align="right"> * 비밀번호 :</td>

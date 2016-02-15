@@ -3,6 +3,8 @@
 		echo"상품이 없습니다.";
 	}
 	else{
+		$pageInfo=isset($_SESSION['PageInfo'])?$_SESSION['PageInfo']:false;
+    	echo"총 상품이 ".$pageInfo['all_record_num']."개가 있습니다.";
 ?>
  <form action="../controller/MainCTL.php?action=9212" method="post">
 <table width=500 border=0 cellpadding=2 cellspacing=1 bgcolor=#eeeee  style="font-size: 11" class="table">
@@ -26,7 +28,12 @@
 	   		echo"<tr>";
 	   		foreach($product as $pro => $value){
 	   			echo"<td>";
-	   			echo($value);
+	   			if($pro=='pname'){
+	   				echo "<a href='../controller/MainCTL.php?action=920&pnum=".strval($product['pnum'])."''>".strval($value)."</a>";
+	   			}
+	   			else{
+	   				echo($value);
+	   			}
 	   			echo"</td>";
 	   		}
 	   		

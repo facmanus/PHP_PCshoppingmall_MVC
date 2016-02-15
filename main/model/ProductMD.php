@@ -15,11 +15,6 @@
 
 	    return $retArr;
 	}
-
-	function getAutoIncrementNum(){
-   		return mysql_insert_id();
-	}
-
 	
 	function deteil_seleting($pnum){
 		$query="SELECT * FROM product WHERE pnum = '".strval($pnum)."'";

@@ -1,3 +1,4 @@
+
 <?php
 
 	//session_start();
@@ -38,39 +39,9 @@ $retaction = isset($_REQUEST['retaction'])?$_REQUEST['retaction']:null;
 				</select>	
 			</td>
 		</tr>
-		<tr>
-			
-			<td colspan="2">
-				<div ng-app="myApp" ng-controller="costCtrl">
 
-					수량  : <input type="number" ng-model="quantity">
-					<br>
-					가격  : <input type="number" ng-model="price">
-
-					<p>합계 = {{ (quantity * price) | currency }}</p>
-
-				</div>
-
-				<script>
-					var app = angular.module('myApp', []);
-					app.controller('costCtrl', function($scope) {
-						$scope.quantity = 1;
-						$scope.price = <?=$product_info['pprice']?>;
-					});
-				</script>
-		</td>
-	</tr>
 	<tr>
-		<td>장바구니</td>
-	</tr>
-	<tr>
-		<td>바로구매</td>
-	</tr>
-	<tr>
-		<td>모바일구매</td>
-	</tr>
-	<tr>
-		<td>관심상품등록</td>
+		<td colspan="2">구매</td>
 	</tr>
 
 	<tr>

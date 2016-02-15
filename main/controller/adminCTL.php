@@ -12,16 +12,22 @@
 
 //회원관리
 		case 100:
+					if(!isset($_SESSION['search_keyword'])){
+		        	    $all_record_num = getMemberCount();
+		            }
+		            elseif(isset($_SESSION['search_keyword'])){
+		                $all_record_num = search_getMemberCount($_SESSION['search'],$_SESSION['search_keyword']);
+		            }
+		            
+					$_SESSION['PageInfo'] = getPageInfo($pageNum,$all_record_num);
 					if(isset($_SESSION['search_keyword'])){
 						$search_val['search'] = $_SESSION['search'];
 		            	$search_val['search_keyword'] = $_SESSION['search_keyword'];
 		            	$search_val['action'] = $action;
-		            	$_SESSION['PageInfo'] = getPageInfo($pageNum,$action);
 		            	$_SESSION['memberList'] = search_MemberPageInfo($search_val,$pageNum);
 
 		            	// header("location:../controller/MainCTL.php?action=$action&pageNum=$pageNum");
 					}else{
-						$_SESSION['PageInfo'] = getPageInfo($pageNum,$action);
         				$_SESSION['memberList'] = MemberPageInfo($pageNum);
 					}
 			break;

@@ -1,5 +1,8 @@
 <?php
 	$comunnityList=isset($_SESSION['comunityList'])?$_SESSION['comunityList']:false;
+	$pageInfo=isset($_SESSION['PageInfo'])?$_SESSION['PageInfo']:false;
+
+	echo"현재 ".$pageInfo['all_record_num']."개의 글이 있습니다.";
 ?>
 <html>
     <!-- <form action="../controller/MainCTL.php?action=916" method="post"> -->

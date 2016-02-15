@@ -1,4 +1,9 @@
 <?php
+
+
+function getAutoIncrementNum(){
+        return mysql_insert_id();
+}
 function updateProductByNum( $data ){
 
     $sql = " UPDATE product SET ";

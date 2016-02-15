@@ -13,7 +13,7 @@
     $_SESSION['login_seccess_id']= isset($_SESSION['login_seccess_id'])?$_SESSION['login_seccess_id']:false;
     $_SESSION['login_seccess_level'] = isset($_SESSION['login_seccess_level'])?$_SESSION['login_seccess_level']:false;
     $_SESSION['productlist']=isset($_SESSION['productlist'])?$_SESSION['productlist']:null;
-
+    $_SESSION['user_infomation']=isset($_SESSION['user_infomation'])?$_SESSION['user_infomation']:null;
     //action에 다른 처리 방식
 
     //550의 이하일 시에 물건을 출력한다는 의미.
@@ -93,6 +93,7 @@
             $_SESSION['login_seccess_member_id']=$user_result['member_id'];
             $_SESSION['login_seccess_id']=$user_result['id'];
             $_SESSION['login_seccess_level']=$user_result['level'];
+            $_SESSION['user_infomation']=$user_result;
         }
 
         $action=110;

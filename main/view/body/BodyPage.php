@@ -1,7 +1,7 @@
 <?php
 	$actionIndex = floor($action/100) - 1; // 액션코드에 따른 메뉴 인덱스 계산
 	$actionIndex2 = floor($action/10)%10; // 액션코드에 따른 서브메뉴 인텍스 계산
-
+	$pageInfo=isset($_SESSION['PageInfo'])?$_SESSION['PageInfo']:false;
 	$productImagePath = "../../img/product/"; // 상품이미지 저장 디렉터리
 	$productThumbnailPath = "../../img/product_s/"; // 상품 썸네일 이미지 저장 디렉터리
 	$staticImagePath = "../../img/static_img/"; // 정적 이미지 저장 디렉터리
@@ -10,9 +10,10 @@
 
 
 	if($productlist==false){
-		echo"상품이 없습니다.";
+		echo"상품 준비 중입니다.";
 	}
 	else{
+		echo"현재 해당 카테고리에 ".$pageInfo['all_record_num']."개의 상품이 있습니다.";
 		echo "<table width=500 border=0 cellpadding=2 cellspacing=1 bgcolor=#eeeee  style='font-size: 11' class='table'>";
 		if( ! $productlist ){
 		    echo "<tr><td colspan='3'>저장된 데이터가 없습니다</td></tr>";
