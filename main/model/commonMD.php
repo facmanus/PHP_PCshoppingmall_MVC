@@ -1,9 +1,11 @@
 <?php
 
-
+//마지막 쿼리의 기본키가져오기.
 function getAutoIncrementNum(){
         return mysql_insert_id();
 }
+
+//물품을 수정한다.
 function updateProductByNum( $data ){
 
     $sql = " UPDATE product SET ";
@@ -14,17 +16,40 @@ function updateProductByNum( $data ){
     return $result;
 }
 
-// 파일 업로드 처리 함수
-function singleFileUpload($uploadFileInfo, $uploadPath, $saveFileName, $fileMaxSize){
+// 파일을 1개를 업로드한다.
+function singleFileUpload($saveFInfo, $saveFPath, $saveFName, $fileMaxSize){
+    //파일의 경로
+    $FPathDir = $saveFPath;
+    //basename : 파일의 경로를 제외한다.
+    $fullDirFile = $FPathDir.basename($saveFName);
+    $imageFileType = pathinfo($fullDirFile,PATHINFO_EXTENSION);
 
-    $targetDir = $uploadPath;
-    $targetFile = $targetDir.basename($saveFileName);
-    $imageFileType = pathinfo($targetFile,PATHINFO_EXTENSION);
-
-    // 이미지 파일이 가짜 이미지 파일 인지 확인 
-    $check = getimagesize($uploadFileInfo["tmp_name"]);
-    if($check != false) {
-         $returnArr['msg'][0] = "File is an image - " . $check["mime"] . ".";
+    // 파일의 정보 출력 getimagesize
+        // [0] 에는 이미지의 너비
+        // $a[1] 에는 이미지의 높이
+        // $a[2] 에는 이미지의 종류
+        // $a[3] 에는 html로 출력시 img 태그에 넣을 요소
+        // $a['mime'] 에는 이미지의 mimetype
+        ///a[2]
+            // 1 => 'GIF',
+            // 2 => 'JPG',
+            // 3 => 'PNG',
+            // 4 => 'SWF',
+            // 5 => 'PSD',
+            // 6 => 'BMP',
+            // 7 => 'TIFF(intel byte order)',
+            // 8 => 'TIFF(motorola byte order)',
+            // 9 => 'JPC',
+            // 10 => 'JP2',
+            // 11 => 'JPX',
+            // 12 => 'JB2',
+            // 13 => 'SWC',
+            // 14 => 'IFF',
+            // 15 => 'WBMP',
+            // 16 => 'XBM'
+    $GetfileInfo = getimagesize($saveFInfo["tmp_name"]);
+    if($GetfileInfo != false) {
+         $returnArr['msg'][0] = "File is an image - " . $GetfileInfo["mime"] . ".";
          $returnArr['uploadOk'] = 1;
     } else {
          $returnArr['msg'][0] = "File is not an image.";
@@ -32,13 +57,13 @@ function singleFileUpload($uploadFileInfo, $uploadPath, $saveFileName, $fileMaxS
     }
 
     // 대상 파일이 이미 존재하고 있는지 확인
-    if (file_exists($targetFile)) {
+    if (file_exists($fullDirFile)) {
         $returnArr['msg'][1] = "Sorry, file already exists.";
         $returnArr['uploadOk'] = 0;
     }
     
      // 파일의 SIZE가 정해진 크기 이내에 있는지 확인
-    if ($uploadFileInfo["size"] > $fileMaxSize) {
+    if ($saveFInfo["size"] > $fileMaxSize) {
         $returnArr['msg'][2] = "Sorry, your file is too large.";
         $returnArr['uploadOk'] = 0;
      }
@@ -54,8 +79,9 @@ function singleFileUpload($uploadFileInfo, $uploadPath, $saveFileName, $fileMaxS
     if ($returnArr['uploadOk'] == 0) {
         $returnArr['msg'][4] = "Sorry, your file was not uploaded.";
     } else {
-        if (move_uploaded_file($uploadFileInfo["tmp_name"], $targetFile)) {
-            $returnArr['msg'][5] = "The file ". basename( $uploadFileInfo["name"]). " has been uploaded.";
+        //move_uploaded_file : 파일을 이동시킨다.
+        if (move_uploaded_file($saveFInfo["tmp_name"], $fullDirFile)) {
+            $returnArr['msg'][5] = "The file ". basename( $saveFInfo["name"]). " has been uploaded.";
         } else {
             $returnArr['msg'][5] = "Sorry, there was an error uploading your file.";
         }

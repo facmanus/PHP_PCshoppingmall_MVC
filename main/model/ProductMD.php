@@ -1,7 +1,6 @@
 <?php
-	// product 입력
 	include_once "commonMD.php";
-
+	//product 입력
 	function insertProduct($data){
 	    $query = " INSERT INTO product(pcategory,pcode,pname,pstock,pprice,pfimage,psimage) ";
 	    $query.=" VALUES('";
@@ -15,7 +14,7 @@
 
 	    return $retArr;
 	}
-	
+	//product 검색
 	function deteil_seleting($pnum){
 		$query="SELECT * FROM product WHERE pnum = '".strval($pnum)."'";
 		$result =SQL_CON($query);

@@ -25,20 +25,26 @@
             </div>
             <div>
               <ul class="nav navbar-nav" >
-                <li  class="active"><a href="http://localhost/PHP_BeomShop_MVCv1.6"><img src='../../img/0.png'></a></li>
+                <li  class="active"><a href="http://localhost/PHP_BeomShop_MVCv1.8"><img src='../../img/0.png'></a></li>
               <?php
+                //관리자가 ManagerMode로 진입한다.
                 if(intval($action/1000)==9){
+                    //관리자 메뉴를 출력
                     include ("./admin_page/admin_MainMenu.php");
                 }
+
+                //일반모드로 진입한다.
                 else{
                     $mainMenuShortNum = intval($action/100);
 
                       for($cnt = 1; $cnt <=6; $cnt++){
                           $codeNum = $cnt * 100;
                           echo "<li><a href ='../controller/MainCTL.php?action=$codeNum&pageNum=1' style='text-decoration:none'>";
+                          //해당 메인메뉴의 선택표시
                           if($mainMenuShortNum==$cnt){
                               echo "<img class='img-responsive' src='../../img/{$codeNum}c.png'>";
                           }
+                          //나머지는 미선택 표시
                           else{
                               echo "<img class='img-responsive' src='../../img/$codeNum.png'>";
                           }

@@ -37,8 +37,10 @@
 			      	    echo($thumbImgFileName);
 			      }
 			      echo "' height='150' border='0'/></a><br/>";
-			      echo($product['pcode']); echo "<br/>";
+			      echo"[".$product['pcode']."]";
+			      echo"<strong>";
 			      echo($product['pname']); echo "<br/>";
+			      echo"</strong>";
 			      echo($product['pstock']); echo "개<br/>";
 			      echo($product['pprice']); echo "원<br/>";
 			    echo "</td>";

@@ -1,7 +1,5 @@
 <?
 	// 커뮤니티 글쓰기
-
-	
 ?>
 <table border="1">
 	<form name="memberJoin" action="../controller/MainCTL.php" method="post" enctype="multipart/form-data">
@@ -12,7 +10,7 @@
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><input type="checkbox" name="ishtml" value="Y">HTML쓰기</td>
+			<td><input type="checkbox" name="ishtml" value="Y">태그사용하기</td>
 		</tr>
 		<tr>
 			<td colspan="2"><textarea name="content" rows="5" cols="60"></textarea></td>

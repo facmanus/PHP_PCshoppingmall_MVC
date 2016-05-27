@@ -17,50 +17,39 @@
             $data['ishtml']=isset($_REQUEST['ishtml'])?$_REQUEST['ishtml']:"N";
 
 			$result = insertComunity($data);
+            //첨부 파일이 있다면
+            if( $upload_datas['file']!="noFile" ){
+                $ComunityImgPath = "../../img/comunity_uploadFile/";
+                $ImgMax = 5000000; 
 
-           //  if( $upload_datas['file']!="noFile" ){
-           //      // 첨부파일을 등록한 후 디다이렉션 한다.
-           //      $freeBoardImgSavePath = "../../img/comunity_uploadFile/";
-           //      $fileMaxSize = 2000000; 
+                $ptnum = $result['fnum'];
+                $uploadFiles = filerange($upload_datas['file']);
 
-           //      $ptnum = $result['fnum'];
+                   $cnt = 1;
+                   foreach( $uploadFiles as $uploadFile ){
+                                        //파일정보 반환(파일명, 파일확장자)
+                        $imgFileType = pathinfo($uploadFile['name'],PATHINFO_EXTENSION);
+                        $saveFile = "comunityUP".date("YmdHis").strval($ptnum).strval($cnt).".".strval($imgFileType);
+                        $cnt++;
 
-           //         $uploadFiles = $upload_datas['file'];
-
-           //         $cnt = 1;
-           //         foreach( $uploadFiles as $uploadFile ){
-           //                              //파일정보 반환(파일명, 파일확장자)
-           //              $imgFileType = pathinfo($uploadFile['name'],PATHINFO_EXTENSION);
-           //              $saveFile = "comunityUP".date("YmdHis").strval($ptnum).strval($cnt).".".strval($imgFileType);
-           //              $cnt++;
-
-           //              $upfile_info['ptnum'] = $ptnum;
-           //              $upfile_info['uploadfile'] = $uploadFile['name'];
-           //              $upfile_info['savefile'] = $saveFile;
-           //              $upfile_info['filetype'] = $uploadFile['type'];
+                        $upfile_info['ptnum'] = $ptnum;
+                        $upfile_info['uploadfile'] = $uploadFile['name'];
+                        $upfile_info['savefile'] = $saveFile;
+                        $upfile_info['filetype'] = $uploadFile['type'];
   
-           //              $retArr = singleFileUpload($uploadFile, $freeBoardImgSavePath, $saveFile, $fileMaxSize);
+                        $retArr = singleFileUpload($uploadFile, $ComunityImgPath, $saveFile, $ImgMax);
  
-           //               if( $retArr['uploadOk'] ){ 
-           //                      $result = insertAttachFile($upfile_info);
+                         if( $retArr['uploadOk'] ){ 
+                                $result = insertAttachFile($upfile_info);
                         
-           //                      if( ! $result ){
-           //                          $action = 601; //다시 입력하도록 실패메시지 뷰로 리다이렉트
-           //                          header("location:../view/MainView.php?action=$action");
-           //                          break;
-           //                      }
-           //               }
-           //         }
-                
-
-           //      if( $result ){
-           //          $action = 600; // 입력 성공후 상품리스트 보기 콘트롤로 리다이렉트
-           //          header("location:../controller/MainCTL.php?action=$action");
-           //      }else{
-           //          $action = 601; //다시 입력하도록 실패메시지 뷰로 리다이렉트
-           //          header("location:../view/MainView.php?action=$action");
-           //      }
-           // }
+                                if( ! $result ){
+                                    $action = 601;
+                                    header("location:../view/MainView.php?action=$action");
+                                    break;
+                                }
+                         }
+                   }
+           }
 			     $action=600;
 		    break;
         //글 자세히 보기
@@ -68,13 +57,19 @@
                 $fnum=isset($_REQUEST['fnum'])?$_REQUEST['fnum']:false;
                 hitUp($fnum);
                 $_SESSION['detail_content']=selectFnumComunnity($fnum);
+                $_SESSION['detail_attach']=selectAttachFile($fnum);
                 $action=610;
             break;
         //글 삭제하기
         case 611 :
                 $fnum=isset($_REQUEST['fnum'])?$_REQUEST['fnum']:false;
+                $delete_attach_save_files=isset($_REQUEST['delete_attach_files[]'])?$_REQUEST['delete_attach_files[]']:false;
                 deleteComunity($fnum);
+                foreach($delete_attach_files as $delete_attach_file){
+                    deleteComunity_attach_file($delete_attach_file['savefile']);
+                }
                 $action=600;
+                header("location:../view/MainView.php?action=$action");
             break;
         //댓글 달기
         case 620 :
@@ -84,6 +79,7 @@
                 insertComment($fnum,$mnum,$CC);
                 $action=610;
 	       break;
+        //답글 달기
          case 630 : 
                 $parentinfo['parent_sub']=isset($_REQUEST['parent_sub'])?$_REQUEST['parent_sub']:false;
                 $parentinfo['parent_con']=isset($_REQUEST['parent_con'])?$_REQUEST['parent_con']:false;
@@ -93,17 +89,18 @@
 
                 $_SESSION['parentinfo']=$parentinfo;
          break;
+         //답글 저장 버튼 액션 (답글 저장)
          case 631 :
-            $data['login_write_member_id']=$_SESSION['login_seccess_member_id'];
-            $data['subject']=isset($_REQUEST['subject'])?$_REQUEST['subject']:"제목이 없습니다.";
-            $data['content']=isset($_REQUEST['content'])?$_REQUEST['content']:"내용이 없습니다.";
-            $upload_datas['file']=isset($_FILES['file'])?$_FILES['file']:"noFile";
-            $data['ishtml']=isset($_REQUEST['ishtml'])?$_REQUEST['ishtml']:"N";
-            $data['fam']=isset($_REQUEST['fam'])?$_REQUEST['fam']:0;
-            $data['ord']=isset($_REQUEST['ord'])?$_REQUEST['ord']:0;
-            $data['stp']=isset($_REQUEST['stp'])?$_REQUEST['stp']:0;
-            insert_answer($data);
-            $action=600;
+                $data['login_write_member_id']=$_SESSION['login_seccess_member_id'];
+                $data['subject']=isset($_REQUEST['subject'])?$_REQUEST['subject']:"제목이 없습니다.";
+                $data['content']=isset($_REQUEST['content'])?$_REQUEST['content']:"내용이 없습니다.";
+                $upload_datas['file']=isset($_FILES['file'])?$_FILES['file']:"noFile";
+                $data['ishtml']=isset($_REQUEST['ishtml'])?$_REQUEST['ishtml']:"N";
+                $data['fam']=isset($_REQUEST['fam'])?$_REQUEST['fam']:0;
+                $data['ord']=isset($_REQUEST['ord'])?$_REQUEST['ord']:0;
+                $data['stp']=isset($_REQUEST['stp'])?$_REQUEST['stp']:0;
+                insert_answer($data);
+                $action=600;
         break;
 
     }

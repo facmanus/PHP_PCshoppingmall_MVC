@@ -93,19 +93,7 @@
         $result=SQL_CON($query);
         $cnt=0;
         while ($row=mysql_fetch_array($result)) {
-            $memberList[$cnt]['member_id'] = $row['member_id'];
-            $memberList[$cnt]['id'] = $row['id'];
-            $memberList[$cnt]['name'] = $row['name'];
-            $memberList[$cnt]['passwd'] = $row['passwd'];
-            $memberList[$cnt]['level'] = $row['level'];
-            $memberList[$cnt]['gender'] = $row['gender'];
-            $memberList[$cnt]['phone'] = $row['phone'];
-            $memberList[$cnt]['address'] = $row['address'];
-            $memberList[$cnt]['movie'] = $row['movie'];
-            $memberList[$cnt]['book'] = $row['book'];
-            $memberList[$cnt]['shop'] = $row['shop'];
-            $memberList[$cnt]['sport'] = $row['sport'];
-            $memberList[$cnt]['intro'] = $row['intro'];
+            $memberList[$cnt]= $row;
 
             $cnt++;
         }

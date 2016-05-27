@@ -26,13 +26,23 @@ session_start();
         </style>
         <!-- 앙귤라js추가 -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- 맨위로 버튼 자바스크립트 적용 -->
+    <script type="text/javascript" src=../../JS/scroll_top.js ></script>
 </head>
     <body>
+
+    <!-- Top 버튼 시작-->
+        <div style="display:scroll;position:fixed;bottom:50px;right:50px;">
+            <a onclick="go_top();" title=Top><img src=../../img/top.png ></a>
+        </div>
+    <!-- Top 버튼 끝-->
+
     <!-- 부트스트랩 상단 메뉴 시작 -->
             <?php
                 include("./topmenu.html");
             ?>
-         <!-- 부트스트랩 상단 메뉴 끝-->
+    <!-- 부트스트랩 상단 메뉴 끝-->
+
          <center><?php include "./Title.php" ?></center>
         <table width = "800"align="center" border="0" class="table">
             <tr><td colspan="2" width="800" height="50"><?php include "./login_window.php" ?> </td></tr>
@@ -100,5 +110,7 @@ session_start();
                 </td>
             </tr>
         </table>
+        
     </body>
+
 </html>
