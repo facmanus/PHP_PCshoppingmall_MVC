@@ -4,7 +4,7 @@
     //현재 코드의 흐름상으로는 쿼리를 실행 시키기 위한 DB연결 이기 때문에 하나의 함수로 쿼리 실행까지 묶었다.
     function SQL_CON($query){
         //DB에 접근하기 위한 주소, 아이디, 비밀번호(참고로 xampp 오류로 오토셋으로 실행)
-        $connect = @mysql_pconnect("localhost","root","autoset");
+        $connect = @mysql_pconnect("localhost","","autoset");
         mysql_select_db("beomshop", $connect);
         if($query!="noneQuery"){
             mysql_query("SET NAME utf8 ");
