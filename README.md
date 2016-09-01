@@ -3,10 +3,10 @@
 PHP기반 MVC패턴 PC 쇼핑몰</br>
 ショッピングモールメカニズムを理解して開発したコンピューターショッピングモール</br>
 
-1.概要</br>
+<b>1.概要</b></br>
 MVC패턴(Model, View, Controller)과 PHP문법, 서버의 동작방식 등을 익히고 MVC패턴의 PHP기반 개인 쇼핑몰을 개발한다. 개발해 나가면서 전체적인 MVC패턴의 흐름을 확실히 익히고, PHP의 동작 방식에 대해서 확실히 이해한다. 또한 평소에 이용하던 쇼핑몰과 웹사이트들의 동작방식과 전체적인 메카니즘을 이해하게 되며, 기존에 나와있는 MVC, PHP 문법 기술들의 개선방안을 생각하여 적용하고, 쇼핑몰에 적용하면 개선될 수 있는 기술(반응형, 프레임워크 등)을 찾아 적용하고 새로운 자신만의 쇼핑몰을 만들어 나간다. 
 
-2.主な機能</br>
+<b>2.主な機能</b></br>
 PHP&HTML</br>
   관리자가 로그인시 일반모드/관리자모드 변경가능, 관리자모드의 회원관리(회원정보 수정 삭제), 상품관리(상품등록(이미지),삭제)</br>
   메뉴에 따른 서브메뉴와 상품출력, 회원로그인/로그아웃, 회원정보검색기능, 상품 등록/보기, 상품상세보기, 게시판의 페이지네이션,</br> 커뮤니티(게시판) 댓글작성, 답글작성(수정삭제), 쇼핑몰 회원의 레벨별 기능 설정, 회원의 닉네임 설정</br>
@@ -15,8 +15,8 @@ CSS&BOOTSTRAP</br>
 JavaScript&AngularJS</br>
   부드러운 맨위로 버튼(JS), 로그인시 간략하게 회원정보보기(AJS)</br>
 
-3.開発環境: SublimeText3, XAMPP</br>
-4.開発言語 : MySQL 5.6.26, PHP 5.6.12, Apache 2.4.16, AnguralJS, Bootstrap, JavaScript, MVC pattern</br>
+<b>3.開発環境</b>: SublimeText3, XAMPP</br>
+<b>4.開発言語</b> : MySQL 5.6.26, PHP 5.6.12, Apache 2.4.16, AnguralJS, Bootstrap, JavaScript, MVC pattern</br>
 
 
 # database architecture
