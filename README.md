@@ -47,17 +47,17 @@ free_reply
 	
 #説明
 전체적인 쇼핑몰 실행화면
-![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname01.bmp)
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname01.bmp)
 1.로그인&관리자모드
 	1-1)로그인화면
-
+		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname02.bmp)
 	1-2)일반회원과 관리자가 로그인시 아이디와 레벨 표시
-
+		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname03.bmp)
 
 	1-3)로그인시 로그아웃 알림
-
+		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname04.bmp)
 	1-4)관리자로그인시 ManageMode(관리자모드) <-> PublicMode(일반모드) 변경버튼 생성
-
+		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname05.bmp)
 	1-4-1)관리자로그인 중 일반모드
 일반회원과 같은 뷰 출력
 
