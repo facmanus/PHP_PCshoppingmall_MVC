@@ -46,7 +46,7 @@ free_reply
 	mnum(foreign key) : 댓글을 작성한 회원번호
 	
 #説明
-전체적인 쇼핑몰 실행화면
+전체적인 쇼핑몰 실행화면</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname01.bmp)
 1.로그인&관리자모드
 	1-1)로그인화면
