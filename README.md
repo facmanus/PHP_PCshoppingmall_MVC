@@ -64,65 +64,64 @@ free_reply
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname07.bmp)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname08.bmp)</br>
 
-
-2.관리자모드 삭제
-	2-1)회원관리, 물품관리시 한번에 삭제할 수 있는 기능(체크박스)
+</br>
+2.관리자모드 삭제</br>
+	2-1)회원관리, 물품관리시 한번에 삭제할 수 있는 기능(체크박스)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname09.bmp)</br>
-3.게시판(커뮤니티)
-	3-1)답글형게시판
-	3-1-1) 본글에 대한 답글, 답글에 대한 답글 입력, 삭제 정렬
+3.게시판(커뮤니티)</br>
+	3-1)답글형게시판</br>
+	3-1-1) 본글에 대한 답글, 답글에 대한 답글 입력, 삭제 정렬</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname10.bmp)</br>	
-	3-1-3)답글에 대한 답글 입력
+	3-1-3)답글에 대한 답글 입력</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname11.bmp)</br>
-	3-2)댓글형게시판 
-	3-2-1) 본글/답글에 대한 댓글 입력(로그인시),출력
+	3-2)댓글형게시판 </br>
+	3-2-1) 본글/답글에 대한 댓글 입력(로그인시),출력</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname12.bmp)</br>
+</br>
+4.추가 편의기능</br>
+	4-1) 로그인시 간략한 프로필보기기능(AnguralJS사용)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname13.bmp)</br>
 
-4.추가 편의기능
-	4-1) 로그인시 간략한 프로필보기기능(AnguralJS사용)
+	4-2) 회원가입시 회원의 다양한 정보 입력</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname14.bmp)</br>
-
-	4-2) 회원가입시 회원의 다양한 정보 입력
+	4-3) 스크롤 시에도 고정적인 메뉴</br>
+	4-3-1)스크롤 상단</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname15.bmp)</br>
-	4-3) 스크롤 시에도 고정적인 메뉴
-	4-3-1)스크롤 상단
+	4-3-2)스크롤 하단 & 하단 우측의 맨위로 버튼을 누르면 부드럽게 상단으로 이동</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname16.bmp)</br>
-	4-3-2)스크롤 하단 & 
-	하단 우측의 맨위로 버튼을 누르면 부드럽게 상단으로 이동
+	4-4)화면크기에 대한 반응형 웹사이트</br>
+	4-4-1)풀사이즈</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname17.bmp)</br>
-	4-4)화면크기에 대한 반응형 웹사이트
-	4-4-1)풀사이즈
+	4-4-2)풀사이즈 이하 사이즈(이미지, 글자 크기 축소)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname18.bmp)</br>
-	4-4-2)풀사이즈 이하 사이즈(이미지, 글자 크기 축소)
+	4-5)회원정보 찾기(다른 기준)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname19.bmp)</br>
-	4-5)회원정보 찾기(다른 기준)
-	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname20.bmp)</br>
-	
-6. 프로젝트 주요 소스코드 캡쳐 및 설명(주요 코드 반드시 캡쳐 하여 첨부)
+	</br>
+6. 프로젝트 주요 소스코드 캡쳐 및 설명(주요 코드 반드시 캡쳐 하여 첨부)</br>
 
 
-view
-	6-1)커뮤니티 게시판 리스트
+view</br>
+	6-1)커뮤니티 게시판 리스트</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname20.bmp)</br>
-	6-2)본글쓰기
+	6-2)본글쓰기</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname21.bmp)</br>
-	6-3)글 자세히보기
+	6-3)글 자세히보기</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname22.bmp)</br>
 
-	6-3-1) 답글쓰기
+	6-3-1) 답글쓰기</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname23.bmp)</br>
-	6-4)답글쓰기
+	6-4)답글쓰기</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname24.bmp)</br>
 
 
-controll
-	6-1)글쓰기(본글 답글) 저장
+controll</br>
+	6-1)글쓰기(본글 답글) 저장</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname25.bmp)</br>
 
-model
-	6-1)게시글 상세보기(댓글포함)
+model</br>
+	6-1)게시글 상세보기(댓글포함)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname26.bmp)</br>
-	6-2)본글작성
+	6-2)본글작성</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname27.bmp)</br>
-	6-3)답글작성
+	6-3)답글작성</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname28.bmp)</br>
