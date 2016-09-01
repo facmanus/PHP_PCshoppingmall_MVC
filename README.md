@@ -1,49 +1,49 @@
 # PHP_PCshoppingmall_MVC
 
-PHP기반 MVC패턴 PC 쇼핑몰
-ショッピングモールメカニズムを理解して開発したコンピューターショッピングモール
+PHP기반 MVC패턴 PC 쇼핑몰</br>
+ショッピングモールメカニズムを理解して開発したコンピューターショッピングモール</br>
 
-1.概要
+1.概要</br>
 MVC패턴(Model, View, Controller)과 PHP문법, 서버의 동작방식 등을 익히고 MVC패턴의 PHP기반 개인 쇼핑몰을 개발한다. 개발해 나가면서 전체적인 MVC패턴의 흐름을 확실히 익히고, PHP의 동작 방식에 대해서 확실히 이해한다. 또한 평소에 이용하던 쇼핑몰과 웹사이트들의 동작방식과 전체적인 메카니즘을 이해하게 되며, 기존에 나와있는 MVC, PHP 문법 기술들의 개선방안을 생각하여 적용하고, 쇼핑몰에 적용하면 개선될 수 있는 기술(반응형, 프레임워크 등)을 찾아 적용하고 새로운 자신만의 쇼핑몰을 만들어 나간다. 
 
-2.主な機能
-PHP&HTML
-  관리자가 로그인시 일반모드/관리자모드 변경가능, 관리자모드의 회원관리(회원정보 수정 삭제), 상품관리(상품등록(이미지),삭제)
-  메뉴에 따른 서브메뉴와 상품출력, 회원로그인/로그아웃, 회원정보검색기능, 상품 등록/보기, 상품상세보기, 게시판의 페이지네이션, 커뮤니티(게시판) 댓글작성, 답글작성(수정삭제), 쇼핑몰 회원의 레벨별 기능 설정, 회원의 닉네임 설정
-CSS&BOOTSTRAP
-  쇼핑몰 전체 디자인관리(반응형 테이블 형태,색상,버튼 등), 물품이미지의 반응형 이미지, 웹브라우저 크기에 따른 쇼핑몰 반응형 크기
-JavaScript&AngularJS
-  부드러운 맨위로 버튼(JS), 로그인시 간략하게 회원정보보기(AJS)
+2.主な機能</br>
+PHP&HTML</br>
+  관리자가 로그인시 일반모드/관리자모드 변경가능, 관리자모드의 회원관리(회원정보 수정 삭제), 상품관리(상품등록(이미지),삭제)</br>
+  메뉴에 따른 서브메뉴와 상품출력, 회원로그인/로그아웃, 회원정보검색기능, 상품 등록/보기, 상품상세보기, 게시판의 페이지네이션,</br> 커뮤니티(게시판) 댓글작성, 답글작성(수정삭제), 쇼핑몰 회원의 레벨별 기능 설정, 회원의 닉네임 설정</br>
+CSS&BOOTSTRAP</br>
+  쇼핑몰 전체 디자인관리(반응형 테이블 형태,색상,버튼 등), 물품이미지의 반응형 이미지, 웹브라우저 크기에 따른 쇼핑몰 반응형 크기</br>
+JavaScript&AngularJS</br>
+  부드러운 맨위로 버튼(JS), 로그인시 간략하게 회원정보보기(AJS)</br>
 
-3.開発環境: SublimeText3, XAMPP
-4.開発言語 : MySQL 5.6.26, PHP 5.6.12, Apache 2.4.16, AnguralJS, Bootstrap, JavaScript, MVC pattern
+3.開発環境: SublimeText3, XAMPP</br>
+4.開発言語 : MySQL 5.6.26, PHP 5.6.12, Apache 2.4.16, AnguralJS, Bootstrap, JavaScript, MVC pattern</br>
 
 
 # database architecture
-![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/database_architecture.png)
-membership
-	member_id(Primary key) : 회원의 고유한 회원번호
-	passwd : 회원 id에 일치하는 비밀번호
-	level : 회원의 레벨에 따른 조작 가능한 기능을 제한 하기위한 레벨
-product
-	pnum(Primary key) : 각 물품의 고유한 물품번호
-	pcategory : 물품의 목록을 보여줄 때 기준이되는 물품 카테고리
-	pfimage : 물품의 풀 이미지
-	psimage : 물품의 썸네일 이미지
-freeboard
-	fnum(Primary key) : 커뮤니티 게시판 게시글의 고유한 게시글번호
-	mnum(foreign key) : 게시글을 작성한 회원의 고유 회원번호
-	ishtml : 게시글의 html태그 사용 여부 체크
-	family : 답글와 본글의 그룹을 맺어주기위한 그룹 고유번호
-	orderby : 답글과 본글의 순서를 정렬해주기위한 번호
-	step : 본글의 답글인지 답글의 답글인지를 알기위한 번호
-free_attach
-	anum(Primary key) : 게시글의 첨부한 파일의 고유 번호
-	ptnum(foreign key) : 첨부파일이 포함된 게시글의 번호를 담음
-free_reply
-	rnum(Primary key) : 댓글의 고유 번호
-	ptnum(foreign key) : 댓글이 작성된 게시글의 번호
-	mnum(foreign key) : 댓글을 작성한 회원번호
+![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/database_architecture.png)</br>
+<b>membership</b></br>
+	member_id(Primary key) : 회원의 고유한 회원번호</br>
+	passwd : 회원 id에 일치하는 비밀번호</br>
+	level : 회원의 레벨에 따른 조작 가능한 기능을 제한 하기위한 레벨</br>
+<b>product</b></br>
+	pnum(Primary key) : 각 물품의 고유한 물품번호</br>
+	pcategory : 물품의 목록을 보여줄 때 기준이되는 물품 카테고리</br>
+	pfimage : 물품의 풀 이미지</br>
+	psimage : 물품의 썸네일 이미지</br>
+<b>freeboard</b></br>
+	fnum(Primary key) : 커뮤니티 게시판 게시글의 고유한 게시글번호</br>
+	mnum(foreign key) : 게시글을 작성한 회원의 고유 회원번호</br>
+	ishtml : 게시글의 html태그 사용 여부 체크</br>
+	family : 답글와 본글의 그룹을 맺어주기위한 그룹 고유번호</br>
+	orderby : 답글과 본글의 순서를 정렬해주기위한 번호</br>
+	step : 본글의 답글인지 답글의 답글인지를 알기위한 번호</br>
+<b>free_attach</b></br>
+	anum(Primary key) : 게시글의 첨부한 파일의 고유 번호</br>
+	ptnum(foreign key) : 첨부파일이 포함된 게시글의 번호를 담음</br>
+<b>free_reply</b></br>
+	rnum(Primary key) : 댓글의 고유 번호</br>
+	ptnum(foreign key) : 댓글이 작성된 게시글의 번호</br>
+	mnum(foreign key) : 댓글을 작성한 회원번호</br>
 	
 #説明
 전체적인 쇼핑몰 실행화면</br>
