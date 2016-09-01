@@ -50,86 +50,79 @@ free_reply
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname01.bmp)</br>
 1.로그인&관리자모드</br>
 	1-1)로그인화면</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname02.bmp)</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname02.bmp)</br>
 	1-2)일반회원과 관리자가 로그인시 아이디와 레벨 표시</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname03.bmp)</br>
-
-	1-3)로그인시 로그아웃 알림</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname04.bmp)</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname03.bmp)</br>
+	1-3)로그인시 로그아웃 알림</br>		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname04.bmp)</br>
 	1-4)관리자로그인시 ManageMode(관리자모드) <-> PublicMode(일반모드) 변경버튼 생성</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname05.bmp)</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname05.bmp)</br>
 	1-4-1)관리자로그인 중 일반모드</br>
-		일반회원과 같은 뷰 출력</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname06.bmp)</br>
+	일반회원과 같은 뷰 출력</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname06.bmp)</br>
 	1-4-2) 관리자로그인 중 관리자모드</br>
-		쇼핑몰을 관리하기위한 뷰 출력</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname07.bmp)</br>
-		![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname08.bmp)</br>
+	쇼핑몰을 관리하기위한 뷰 출력</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname07.bmp)</br>
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname08.bmp)</br>
 
 
 2.관리자모드 삭제
 	2-1)회원관리, 물품관리시 한번에 삭제할 수 있는 기능(체크박스)
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname09.bmp)</br>
 3.게시판(커뮤니티)
 	3-1)답글형게시판
-		3-1-1) 본글에 대한 답글, 답글에 대한 답글 입력, 삭제 정렬
-
-		3-1-3)답글에 대한 답글 입력
-
+	3-1-1) 본글에 대한 답글, 답글에 대한 답글 입력, 삭제 정렬
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname10.bmp)</br>	
+	3-1-3)답글에 대한 답글 입력
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname11.bmp)</br>
 	3-2)댓글형게시판 
-		3-2-1) 본글/답글에 대한 댓글 입력(로그인시),출력
-
+	3-2-1) 본글/답글에 대한 댓글 입력(로그인시),출력
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname13.bmp)</br>
 
 4.추가 편의기능
 	4-1) 로그인시 간략한 프로필보기기능(AnguralJS사용)
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname14.bmp)</br>
 
-
-		4-2) 회원가입시 회원의 다양한 정보 입력
-
-		4-3) 스크롤 시에도 고정적인 메뉴
-			4-3-1)스크롤 상단
-
-			4-3-2)스크롤 하단 & 
-			하단 우측의 맨위로 버튼을 누르면 부드럽게 상단으로 이동
-
-		4-4)화면크기에 대한 반응형 웹사이트
-			4-4-1)풀사이즈
-
-
-
-			4-4-2)풀사이즈 이하 사이즈(이미지, 글자 크기 축소)
-			
-		4-5)회원정보 찾기(다른 기준)
-
-			
+	4-2) 회원가입시 회원의 다양한 정보 입력
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname15.bmp)</br>
+	4-3) 스크롤 시에도 고정적인 메뉴
+	4-3-1)스크롤 상단
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname16.bmp)</br>
+	4-3-2)스크롤 하단 & 
+	하단 우측의 맨위로 버튼을 누르면 부드럽게 상단으로 이동
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname17.bmp)</br>
+	4-4)화면크기에 대한 반응형 웹사이트
+	4-4-1)풀사이즈
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname18.bmp)</br>
+	4-4-2)풀사이즈 이하 사이즈(이미지, 글자 크기 축소)
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname19.bmp)</br>
+	4-5)회원정보 찾기(다른 기준)
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname20.bmp)</br>
+	
 6. 프로젝트 주요 소스코드 캡쳐 및 설명(주요 코드 반드시 캡쳐 하여 첨부)
 
 
 view
-
-
-
-
 	6-1)커뮤니티 게시판 리스트
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname20.bmp)</br>
 	6-2)본글쓰기
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname21.bmp)</br>
 	6-3)글 자세히보기
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname22.bmp)</br>
 
-
-		6-3-1) 답글쓰기
-
+	6-3-1) 답글쓰기
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname23.bmp)</br>
 	6-4)답글쓰기
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname24.bmp)</br>
 
 
 controll
 	6-1)글쓰기(본글 답글) 저장
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname25.bmp)</br>
 
 model
 	6-1)게시글 상세보기(댓글포함)
-	
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname26.bmp)</br>
 	6-2)본글작성
-
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname27.bmp)</br>
 	6-3)답글작성
+	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname28.bmp)</br>
