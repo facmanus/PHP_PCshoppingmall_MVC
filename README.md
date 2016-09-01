@@ -46,9 +46,9 @@ JavaScript&AngularJS</br>
 	mnum(foreign key) : 댓글을 작성한 회원번호</br>
 	
 #説明
-전체적인 쇼핑몰 실행화면</br>
+<b>전체적인 쇼핑몰 실행화면</b></br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname01.bmp)</br>
-1.로그인&관리자모드</br>
+<b>1.로그인&관리자모드</b></br>
 	1-1)로그인화면</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname02.bmp)</br>
 	1-2)일반회원과 관리자가 로그인시 아이디와 레벨 표시</br>
@@ -65,10 +65,10 @@ JavaScript&AngularJS</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname08.bmp)</br>
 
 </br>
-2.관리자모드 삭제</br>
+<b>2.관리자모드 삭제</b></br>
 	2-1)회원관리, 물품관리시 한번에 삭제할 수 있는 기능(체크박스)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname09.bmp)</br>
-3.게시판(커뮤니티)</br>
+<b>3.게시판(커뮤니티)</b></br>
 	3-1)답글형게시판</br>
 	3-1-1) 본글에 대한 답글, 답글에 대한 답글 입력, 삭제 정렬</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname10.bmp)</br>	
@@ -78,7 +78,7 @@ JavaScript&AngularJS</br>
 	3-2-1) 본글/답글에 대한 댓글 입력(로그인시),출력</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname12.bmp)</br>
 </br>
-4.추가 편의기능</br>
+<b>4.추가 편의기능</b></br>
 	4-1) 로그인시 간략한 프로필보기기능(AnguralJS사용)</br>
 ![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname13.bmp)</br>
 	4-2) 회원가입시 회원의 다양한 정보 입력</br>
@@ -96,8 +96,8 @@ JavaScript&AngularJS</br>
 	4-5)회원정보 찾기(다른 기준)</br>
 ![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname19.bmp)</br>
 	</br>
-6. 프로젝트 주요 소스코드 캡쳐 및 설명(주요 코드 반드시 캡쳐 하여 첨부)</br>
-view</br>
+<b>6. 프로젝트 주요 소스코드 캡쳐 및 설명(주요 코드 반드시 캡쳐 하여 첨부)</b></br>
+<b>view</b></br>
 	6-1)커뮤니티 게시판 리스트</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname20.bmp)</br>
 	6-2)본글쓰기</br>
@@ -108,10 +108,10 @@ view</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname23.bmp)</br>
 	6-4)답글쓰기</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname24.bmp)</br>
-controll</br>
+<b>controll</b></br>
 	6-1)글쓰기(본글 답글) 저장</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname25.bmp)</br>
-model</br>
+<b>model</b></br>
 	6-1)게시글 상세보기(댓글포함)</br>
 	![ScreenShot](https://github.com/superblr/PHP_PCshoppingmall_MVC/blob/master/readme_img/noname26.bmp)</br>
 	6-2)본글작성</br>
